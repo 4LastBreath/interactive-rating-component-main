@@ -124,6 +124,20 @@ img, picture, svg {
   font-size: 0.95rem;
   color: var(--clr-medium-grey);
   margin-top: calc(var(--size-250) * -1);
+  line-height: 1.4;
+}
+
+.msg-error {
+  display: none;
+  margin-top: var(--size-200);
+  margin-bottom: calc(var(--size-100) * -1);
+  font-size: 0.8rem;
+  text-align: center;
+  color: rgba(252, 112, 112, 0.8);
+}
+
+.msg-error.active {
+  display: block;
 }
 
 .second-card .paragraph {

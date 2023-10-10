@@ -3,13 +3,17 @@ const selectedRatingElement = document.getElementById('selectedRating');
 const submitButton = document.querySelector('.btn-submit');
 const secondCard = document.querySelector('.second-card');
 const firstCard = document.querySelector('.first-card');
+const error = document.querySelector('.msg-error')
 let selectedButton = null;
 
+
+/*** Ne pas submit si rien n'est selectionner ***/
 
 ratingButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
     const selectedValue = e.target.value;
     selectedRatingElement.textContent = selectedValue;
+    error.classList.remove('active')
     
     if (selectedButton) {
       selectedButton.classList.remove('selected');
@@ -24,6 +28,11 @@ ratingButtons.forEach((button) => {
 
 submitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  firstCard.setAttribute('data-visible', false);
-  secondCard.setAttribute('data-visible', true);
+
+  if (!selectedButton) {
+    error.classList.add('active');
+  } else {
+    firstCard.setAttribute('data-visible', false);
+    secondCard.setAttribute('data-visible', true);
+  }
 });
