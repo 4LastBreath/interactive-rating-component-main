@@ -6,9 +6,6 @@ const firstCard = document.querySelector('.first-card');
 const error = document.querySelector('.msg-error')
 let selectedButton = null;
 
-
-/*** Ne pas submit si rien n'est selectionner ***/
-
 ratingButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
     const selectedValue = e.target.value;
